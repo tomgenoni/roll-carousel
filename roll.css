@@ -1,0 +1,75 @@
+.roll {
+    position: relative;
+}
+
+.roll-button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.roll-button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+
+.roll-rail {
+    overflow: hidden;
+    position: relative;
+}
+
+.roll-wrap {
+    display: flex;
+    transition: transform 300ms;
+}
+
+.roll-pane {
+    min-width: 100%;
+    flex: 1;
+}
+
+.roll-control {
+    margin-top: 16px;
+    position: relative;
+}
+
+.roll-arrow {
+    position: absolute;
+    top: 0;
+}
+
+.roll-arrow-right {
+    right: 0;
+}
+
+.roll-dots-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.roll-dot {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+    background: gray;
+    transition: transform 150ms;
+}
+.roll-dot:hover {
+    transform: scale(1.2);
+    transition: transform 150ms;
+}
+
+.roll-dot.is-active {
+    background: red;
+}
