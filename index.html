@@ -27,6 +27,7 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 50px;
         }
 
         .fpo {
@@ -58,13 +59,44 @@
                 </ol>
             </div>
             <div class="roll-control">
-                <button class="roll-button roll-arrow roll-arrow-left" data-dir="1"><</button>
+                <button class="roll-button roll-arrow roll-arrow-left" style="display:none" data-dir="1"></button>
                 <div class="roll-dots-wrap">
                     <button data-step="0" class="roll-button roll-dot is-active"></button>
                     <button data-step="1" class="roll-button roll-dot"></button>
                     <button data-step="2" class="roll-button roll-dot"></button>
                 </div>
-                <button class="roll-button roll-arrow roll-arrow-right" data-dir="-1">></button>
+                <button class="roll-button roll-arrow roll-arrow-right" data-dir="-1"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="roll" data-step="0">
+            <div class="roll-rail">
+                <ol class="roll-wrap">
+                    <li class="roll-pane">
+                        <div class="fpo">0</div>
+                    </li>
+                    <li class="roll-pane">
+                        <div class="fpo">1</div>
+                    </li>
+                    <li class="roll-pane">
+                        <div class="fpo">2</div>
+                    </li>
+                    <li class="roll-pane">
+                        <div class="fpo">3</div>
+                    </li>
+                </ol>
+            </div>
+            <div class="roll-control">
+                <button class="roll-button roll-arrow roll-arrow-left" style="display:none" data-dir="1"></button>
+                <div class="roll-dots-wrap">
+                    <button data-step="0" class="roll-button roll-dot is-active"></button>
+                    <button data-step="1" class="roll-button roll-dot"></button>
+                    <button data-step="2" class="roll-button roll-dot"></button>
+                    <button data-step="3" class="roll-button roll-dot"></button>
+                </div>
+                <button class="roll-button roll-arrow roll-arrow-right" data-dir="-1"></button>
             </div>
         </div>
     </div>

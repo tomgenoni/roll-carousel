@@ -21,7 +21,6 @@
 	padding: 0;
 }
 
-
 .roll-rail {
     overflow: hidden;
     position: relative;
@@ -45,13 +44,39 @@
 .roll-arrow {
     position: absolute;
     top: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.roll-arrow:before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: solid #999;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+    transform: rotate(135deg);
+    position: relative;
+    left: 4px;
+}
+
+.roll-arrow:focus:before,
+.roll-arrow:hover:before {
+    transition: border-color 150ms;
+    border-color: #222;
 }
 
 .roll-arrow-right {
     right: 0;
 }
 
+.roll-arrow-right:before {
+    transform: rotate(-45deg);
+}
+
 .roll-dots-wrap {
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,14 +87,16 @@
     width: 12px;
     height: 12px;
     margin: 0 4px;
-    background: gray;
+    background: #ccc;
     transition: transform 150ms;
 }
+
 .roll-dot:hover {
     transform: scale(1.2);
     transition: transform 150ms;
 }
 
 .roll-dot.is-active {
-    background: red;
+    background: #333;
+    transform: scale(1.2);
 }
