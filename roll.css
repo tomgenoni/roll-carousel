@@ -2,6 +2,48 @@
     position: relative;
 }
 
+.roll-rail {
+    overflow: auto;
+    position: relative;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (min-width: 700px) {
+    .roll-rail {
+        overflow: hidden;
+    }
+}
+
+.roll-wrap {
+    display: flex;
+    transition: transform 300ms;
+}
+
+@media screen and (max-width: 699px) {
+    .roll-wrap {
+        transform: translateX(0) !important;
+    }
+}
+
+.roll-pane {
+    scroll-snap-align: start;
+    min-width: 100%;
+    flex: 1;
+}
+
+.roll-control {
+    display: none;
+}
+
+@media screen and (min-width: 700px) {
+    .roll-control {
+        display: block;
+        margin-top: 16px;
+        position: relative;
+    }
+}
+
 .roll-button {
     border: none;
     margin: 0;
@@ -19,26 +61,6 @@
 .roll-button::-moz-focus-inner {
 	border: 0;
 	padding: 0;
-}
-
-.roll-rail {
-    overflow: hidden;
-    position: relative;
-}
-
-.roll-wrap {
-    display: flex;
-    transition: transform 300ms;
-}
-
-.roll-pane {
-    min-width: 100%;
-    flex: 1;
-}
-
-.roll-control {
-    margin-top: 16px;
-    position: relative;
 }
 
 .roll-arrow {
