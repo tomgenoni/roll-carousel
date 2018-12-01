@@ -5,7 +5,6 @@
 .roll-rail {
     overflow: auto;
     position: relative;
-    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -27,7 +26,6 @@
 }
 
 .roll-pane {
-    scroll-snap-align: start;
     min-width: 100%;
     flex: 1;
 }
@@ -59,8 +57,8 @@
 }
 
 .roll-button::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+    border: 0;
+    padding: 0;
 }
 
 .roll-arrow {

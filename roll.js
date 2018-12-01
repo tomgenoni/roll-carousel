@@ -15,6 +15,21 @@ function initRoll() {
             dot.addEventListener("click", dotTrigger);
         });
 
+        document.onkeydown = function(e) {
+            switch (e.keyCode) {
+                case 37:
+                    document
+                        .querySelector(".roll.is-active .roll-arrow-left")
+                        .click();
+                    break;
+                case 39:
+                    document
+                        .querySelector(".roll.is-active .roll-arrow-right")
+                        .click();
+                    break;
+            }
+        };
+
         function animate(step) {
             const value = -(step * 100);
             wrap.style.transform = `translateX( ${value}%)`;
@@ -37,20 +52,30 @@ function initRoll() {
             dots[step].classList.add("is-active");
         }
 
+        function setActiveRoll(step) {
+            rolls.forEach(({ classList }) => {
+                classList.remove("is-active");
+            });
+            roll.classList.add("is-active");
+        }
+
+        // Click on arrow
         function arrowTrigger(e) {
             const direction = parseInt(this.dataset.dir);
             const oldStep = parseInt(roll.dataset.step);
             const step = oldStep + -direction;
-            updateRoll(step);
+            updateRoll(step, this);
         }
 
+        // Click on dot
         function dotTrigger(e) {
             const step = this.dataset.step;
-            updateRoll(step);
+            updateRoll(step, this);
         }
 
-        function updateRoll(step) {
+        function updateRoll(step, roll) {
             if (step < panes.length && step > -1) {
+                setActiveRoll(roll);
                 animate(step);
                 setStep(step);
                 setActiveDot(step);
